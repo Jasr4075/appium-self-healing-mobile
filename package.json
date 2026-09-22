@@ -11,7 +11,8 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "test:coverage": "c8 --all --include=src --reporter=lcov --reporter=json-summary --reporter=text npm test"
   },
   "keywords": [
     "appium",
@@ -38,6 +39,7 @@
   "peerDependencies": {
     "webdriverio": "^8.0.0 || ^9.0.0"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "c8": "^12.0.0"
+  }
 }

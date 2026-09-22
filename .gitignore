@@ -12,7 +12,8 @@ output/
 *.log
 
 # Test coverage
-coverage/
+coverage/*
+!coverage/badge.json
 
 # Editor/OS
 .vscode/
