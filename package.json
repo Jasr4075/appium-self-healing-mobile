@@ -24,6 +24,17 @@
   ],
   "author": "Juan Angel Sarmiento Rodriguez",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jasr4075/appium-self-healing-mobile.git"
+  },
+  "homepage": "https://github.com/Jasr4075/appium-self-healing-mobile#readme",
+  "bugs": {
+    "url": "https://github.com/Jasr4075/appium-self-healing-mobile/issues"
+  },
+  "files": [
+    "src/"
+  ],
   "peerDependencies": {
     "webdriverio": "^8.0.0 || ^9.0.0"
   },
