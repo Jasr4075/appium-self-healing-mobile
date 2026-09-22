@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# Output do mecanismo (logs, histórico e relatórios)
+output/
+
+# Logs
+*.log
+
+# Test coverage
+coverage/
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
