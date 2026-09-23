@@ -4,7 +4,7 @@ Todas as mudanças relevantes deste projeto serão documentadas neste arquivo.
 
 O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/) e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
-## [1.0.2] - Unreleased
+## [1.0.2] - 2026-09-23
 
 ### Segurança
 - **Node 22+ obrigatório** (`engines: ">=22.12.0"`): Node 18 e 20 chegaram ao fim da vida útil (EOL) e o único ajuste publicado para o CVE do `extract-zip` depende do Node 22. A partir desta versão, o mínimo suportado passa a ser Node 22.12 (LTS atual). CI reconfigurado para testar em Node 22 e 24.
