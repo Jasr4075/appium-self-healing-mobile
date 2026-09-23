@@ -11,6 +11,8 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/) e es
 - Badge de cobertura de código com `c8`, atualiza automaticamente em cada push para `main`.
 - Script `test:coverage` no `package.json`.
 - Este changelog.
+- Suíte completa de testes (`node:test`) com mock de driver WDIO cobrindo todos os módulos: `healing-engine`, `healing-logger`, `selector-history`, `index`, `selector-analyzer` e `similarity-score`.
+- Cobertura de código em 100% (linhas, statements, branches e funções).
 
 ### Alterado
 - Badges de CI e cobertura no README.
