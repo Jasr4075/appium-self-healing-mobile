@@ -1,6 +1,6 @@
 {
   "name": "appium-self-healing-mobile",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An intelligent, heuristic-based self-healing mechanism for Appium and WebdriverIO mobile automation.",
   "type": "module",
   "main": "src/index.js",
