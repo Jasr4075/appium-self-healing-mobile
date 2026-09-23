@@ -4,6 +4,18 @@ Todas as mudanças relevantes deste projeto serão documentadas neste arquivo.
 
 O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/) e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.0.2] - Unreleased
+
+### Segurança
+- **Node 22+ obrigatório** (`engines: ">=22.12.0"`): Node 18 e 20 chegaram ao fim da vida útil (EOL) e o único ajuste publicado para o CVE do `extract-zip` depende do Node 22. A partir desta versão, o mínimo suportado passa a ser Node 22.12 (LTS atual). CI reconfigurado para testar em Node 22 e 24.
+- **Remediação do CVE-2026-56876 / GHSA-jmr9-qjv8-65gv** (path traversal em `extract-zip`, sem patch publicado): a árvore de desenvolvimento agora força `@puppeteer/browsers@^3.2.2` via `overrides`. Na versão 3.x a dependência por `extract-zip` foi substituída por `modern-tar`, eliminando o código vulnerável. **Nenhuma versão de `extract-zip` possui correção** — a única forma de remediar é deixar de usá-lo.
+- `npm audit` agora limpo: **0 vulnerabilidades** em toda a árvore de desenvolvimento (antes: 6 de alta gravidade).
+- `SECURITY.md` adicionado com política de reporte e versões suportadas.
+- Gate de `npm audit` (`npm run audit`) adicionado ao job de qualidade no CI.
+
+### Desenvolvimento
+- Script `test:types` agora roda `tsc --noEmit` (validação estática dos tipos públicos via `tests/types-check.ts`).
+
 ## [1.0.1] - 2026-09-23
 
 ### Adicionado

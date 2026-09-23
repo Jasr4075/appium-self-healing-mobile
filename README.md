@@ -3,7 +3,7 @@
 > Um mecanismo inteligente de autocorreção de seletores (Self-Healing) baseado em heurísticas para testes E2E mobile com Appium e WebdriverIO.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.12.0-brightgreen)](https://nodejs.org)
 [![WDIO](https://img.shields.io/badge/WebdriverIO-v9-orange)](https://webdriver.io/)
 [![CI](https://github.com/Jasr4075/appium-self-healing-mobile/actions/workflows/ci.yml/badge.svg)](https://github.com/Jasr4075/appium-self-healing-mobile/actions/workflows/ci.yml)
 [![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Jasr4075/appium-self-healing-mobile/main/coverage/badge.json)](https://github.com/Jasr4075/appium-self-healing-mobile/tree/main/src)

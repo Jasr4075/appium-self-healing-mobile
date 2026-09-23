@@ -1,6 +1,6 @@
 {
   "name": "appium-self-healing-mobile",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An intelligent, heuristic-based self-healing mechanism for Appium and WebdriverIO mobile automation.",
   "type": "module",
   "main": "src/index.js",
@@ -13,7 +13,7 @@
     }
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22.12.0"
   },
   "files": [
     "src/",
@@ -23,6 +23,7 @@
     "test": "node --test tests/*.test.js",
     "test:coverage": "c8 --all --include=src --check-coverage --lines 100 --branches 100 --functions 100 --statements 100 --reporter=lcov --reporter=json-summary --reporter=text npm test",
     "test:types": "tsc --noEmit",
+    "audit": "npm audit --audit-level=high",
     "lint": "eslint src tests --max-warnings=0",
     "format": "prettier --write \"src/**/*.js\" \"tests/**/*.js\" index.d.ts",
     "format:check": "prettier --check \"src/**/*.js\" \"tests/**/*.js\" index.d.ts",
@@ -49,6 +50,9 @@
   },
   "peerDependencies": {
     "webdriverio": "^8.0.0 || ^9.0.0"
+  },
+  "overrides": {
+    "@puppeteer/browsers": "^3.2.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
