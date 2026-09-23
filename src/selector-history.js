@@ -5,16 +5,16 @@
  * Mantém um histórico para auditoria e possível reutilização.
  */
 
-import fs from "fs";
-import path from "path";
-import healingLogger from "./healing-logger.js";
+import fs from 'fs';
+import path from 'path';
+import healingLogger from './healing-logger.js';
 
 class SelectorHistory {
   constructor() {
     // Apenas define o caminho padrão, sem acessar o disco no import
     this.historyFile =
       process.env.HEALING_HISTORY_PATH ||
-      path.join(process.cwd(), "output", "logs", "self-healing", "selector-history.json");
+      path.join(process.cwd(), 'output', 'logs', 'self-healing', 'selector-history.json');
     this.history = null; // Lazy load
     this.cache = new Map(); // Cache em memória para acesso rápido
   }
@@ -47,7 +47,7 @@ class SelectorHistory {
     }
 
     try {
-      const data = fs.readFileSync(this.historyFile, "utf8");
+      const data = fs.readFileSync(this.historyFile, 'utf8');
       this.history = JSON.parse(data) || [];
       this.buildCache();
     } catch (error) {
@@ -65,7 +65,7 @@ class SelectorHistory {
     try {
       this.loadHistory();
       this.ensureDirectory();
-      fs.writeFileSync(this.historyFile, JSON.stringify(this.history, null, 2), "utf8");
+      fs.writeFileSync(this.historyFile, JSON.stringify(this.history, null, 2), 'utf8');
     } catch (error) {
       healingLogger.logDebug(`Erro ao salvar histórico: ${error.message}`);
     }
@@ -177,9 +177,7 @@ class SelectorHistory {
 
     // Calcula score médio
     const avgScore =
-      history.length > 0
-        ? history.reduce((sum, e) => sum + e.score, 0) / history.length
-        : 0;
+      history.length > 0 ? history.reduce((sum, e) => sum + e.score, 0) / history.length : 0;
 
     // Identifica seletores mais problemáticos
     const selectorFrequency = {};
@@ -197,9 +195,7 @@ class SelectorHistory {
       totalEntries: history.length,
       successfulHealings,
       successRate:
-        history.length > 0
-          ? ((successfulHealings / history.length) * 100).toFixed(2) + "%"
-          : "0%",
+        history.length > 0 ? ((successfulHealings / history.length) * 100).toFixed(2) + '%' : '0%',
       uniqueSpecs: uniqueSpecs.length,
       uniqueSelectors: uniqueSelectors.length,
       averageScore: avgScore.toFixed(2),
@@ -247,7 +243,7 @@ class SelectorHistory {
         entries: this.loadHistory(),
       };
 
-      fs.writeFileSync(outputPath, JSON.stringify(exportData, null, 2), "utf8");
+      fs.writeFileSync(outputPath, JSON.stringify(exportData, null, 2), 'utf8');
 
       healingLogger.logInfo(`Histórico exportado para: ${outputPath}`);
     } catch (error) {
@@ -262,7 +258,7 @@ class SelectorHistory {
     this.history = [];
     this.cache.clear();
     this.saveHistory();
-    healingLogger.logInfo("Histórico de self-healing limpo");
+    healingLogger.logInfo('Histórico de self-healing limpo');
   }
 }
 

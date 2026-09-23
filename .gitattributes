@@ -1,0 +1,22 @@
+* text=auto
+
+*.js text eol=lf
+*.mjs text eol=lf
+*.ts text eol=lf
+*.d.ts text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+.editorconfig text eol=lf
+.gitattributes text eol=lf
+.nvmrc text eol=lf
+.prettierignore text eol=lf
+.prettierrc.json text eol=lf
+
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.tgz binary

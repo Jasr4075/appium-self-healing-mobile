@@ -13,9 +13,18 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/) e es
 - Este changelog.
 - Suíte completa de testes (`node:test`) com mock de driver WDIO cobrindo todos os módulos: `healing-engine`, `healing-logger`, `selector-history`, `index`, `selector-analyzer` e `similarity-score`.
 - Cobertura de código em 100% (linhas, statements, branches e funções).
+- Tipagem pública completa (`index.d.ts`) com validação estática via `tsc` (`npm run test:types`).
+- ESLint (flat config, regras recomendadas do JS) e Prettier com scripts `lint`, `format` e `format:check`.
+- Job de `quality` no CI (lint, formatação e tipos).
+- Gate de cobertura no `c8` (`--check-coverage` a 100%) para o script `test:coverage`.
+- `prepublishOnly` rodando a suíte de testes com `npm test` antes de publicar.
+- Configurações de projeto: `.nvmrc`, `.editorconfig`, `.gitattributes`.
+- Templates de issue (bug, feature e question) e PR template.
+- Tipos condicionais no campo `exports` para resolução correta por TypeScript.
 
 ### Alterado
 - Badges de CI e cobertura no README.
+- Exceções de rethrow em `healing-engine` agora preservam a causa original (`{ cause }`) e catchs sem uso não declaram o binding.
 
 ## [1.0.0] - 2026-09-22
 

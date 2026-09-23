@@ -4,11 +4,11 @@
  * Exporta todos os módulos do sistema de self-healing de forma organizada.
  */
 
-import healingEngine from "./healing-engine.js";
-import selectorAnalyzer from "./selector-analyzer.js";
-import similarityScore from "./similarity-score.js";
-import selectorHistory from "./selector-history.js";
-import healingLogger from "./healing-logger.js";
+import healingEngine from './healing-engine.js';
+import selectorAnalyzer from './selector-analyzer.js';
+import similarityScore from './similarity-score.js';
+import selectorHistory from './selector-history.js';
+import healingLogger from './healing-logger.js';
 
 /**
  * Inicializa o sistema de self-healing
@@ -23,7 +23,7 @@ function initialize(driver, specName, options = {}) {
     healingEngine.setEnabled(options.enabled);
   }
 
-  healingLogger.logInfo("Sistema de Self-Healing inicializado");
+  healingLogger.logInfo('Sistema de Self-Healing inicializado');
 }
 
 /**
@@ -34,7 +34,7 @@ function initialize(driver, specName, options = {}) {
  */
 async function find(driver, selector) {
   if (!healingEngine.driver) {
-    healingEngine.configure(driver, "default");
+    healingEngine.configure(driver, 'default');
   }
   return await healingEngine.healingFind(selector);
 }
@@ -80,4 +80,5 @@ export const healingFind = (selector, options) => healingEngine.healingFind(sele
 export const healingClick = (selector, options) => healingEngine.healingClick(selector, options);
 export const healingSetText = (selector, text, options) =>
   healingEngine.healingSetText(selector, text, options);
-export const healingGetText = (selector, options) => healingEngine.healingGetText(selector, options);
+export const healingGetText = (selector, options) =>
+  healingEngine.healingGetText(selector, options);

@@ -5,17 +5,17 @@
  * Este é o ponto de entrada para o sistema de self-healing.
  */
 
-import healingLogger from "./healing-logger.js";
-import selectorAnalyzer from "./selector-analyzer.js";
-import selectorHistory from "./selector-history.js";
-import similarityScore from "./similarity-score.js";
+import healingLogger from './healing-logger.js';
+import selectorAnalyzer from './selector-analyzer.js';
+import selectorHistory from './selector-history.js';
+import similarityScore from './similarity-score.js';
 
 class HealingEngine {
   constructor() {
     this.driver = null;
     this.enabled = true;
     this.maxAttempts = 3;
-    this.currentSpec = "unknown";
+    this.currentSpec = 'unknown';
   }
 
   /**
@@ -23,7 +23,7 @@ class HealingEngine {
    * @param {Object} driver - Instância do WebdriverIO
    * @param {string} specName - Nome do spec sendo executado
    */
-  configure(driver, specName = "unknown") {
+  configure(driver, specName = 'unknown') {
     this.driver = driver;
     this.currentSpec = specName;
     selectorAnalyzer.setDriver(driver);
@@ -36,7 +36,7 @@ class HealingEngine {
    */
   setEnabled(enabled) {
     this.enabled = enabled;
-    healingLogger.logInfo(`Self-Healing ${enabled ? "ativado" : "desativado"}`);
+    healingLogger.logInfo(`Self-Healing ${enabled ? 'ativado' : 'desativado'}`);
   }
 
   /**
@@ -47,7 +47,7 @@ class HealingEngine {
    */
   async healingFind(selector, options = {}) {
     if (!this.driver) {
-      throw new Error("HealingEngine não foi configurado. Use configure() primeiro.");
+      throw new Error('HealingEngine não foi configurado. Use configure() primeiro.');
     }
 
     healingLogger.logDebug(`Tentando localizar: ${selector}`);
@@ -72,7 +72,7 @@ class HealingEngine {
       return await this.attemptHealing(selector, options);
     } catch (error) {
       // Evita tentativa duplicada quando o self-healing já falhou uma vez.
-      if (error.message && error.message.includes("Self-Healing falhou para seletor")) {
+      if (error.message && error.message.includes('Self-Healing falhou para seletor')) {
         throw error;
       }
 
@@ -109,7 +109,7 @@ class HealingEngine {
             originalSelector,
             newSelector: historicalMatch.newSelector,
             score: historicalMatch.score,
-            reasons: ["historical-match", ...historicalMatch.reasons],
+            reasons: ['historical-match', ...historicalMatch.reasons],
             spec: this.currentSpec,
           });
 
@@ -121,7 +121,7 @@ class HealingEngine {
       const screenElements = await selectorAnalyzer.getScreenElements();
 
       if (screenElements.length === 0) {
-        throw new Error("Nenhum elemento encontrado na tela para análise");
+        throw new Error('Nenhum elemento encontrado na tela para análise');
       }
 
       healingLogger.logDebug(`Analisando ${screenElements.length} elementos da tela`);
@@ -131,7 +131,7 @@ class HealingEngine {
         const result = similarityScore.calculate(originalSelector, element);
 
         // Debug: mostra primeiros 5 candidatos
-        if (idx < 5 && process.env.HEALING_DEBUG === "true") {
+        if (idx < 5 && process.env.HEALING_DEBUG === 'true') {
           healingLogger.logDebug(
             `Candidato ${idx}: text="${element.text}", class="${element.class}", score=${result.score.toFixed(2)}`,
           );
@@ -147,7 +147,7 @@ class HealingEngine {
       const validCandidates = similarityScore.filterValidCandidates(candidates);
 
       if (validCandidates.length === 0) {
-        throw new Error("Nenhum candidato válido encontrado");
+        throw new Error('Nenhum candidato válido encontrado');
       }
 
       healingLogger.logDebug(`${validCandidates.length} candidatos válidos encontrados`);
@@ -155,7 +155,7 @@ class HealingEngine {
       // 5. Seleciona melhor candidato
       const bestCandidate = validCandidates[0];
       healingLogger.logDebug(
-        `Melhor candidato - Score: ${bestCandidate.score.toFixed(2)}, Razões: ${bestCandidate.reasons.join(", ")}`,
+        `Melhor candidato - Score: ${bestCandidate.score.toFixed(2)}, Razões: ${bestCandidate.reasons.join(', ')}`,
       );
 
       // 6. Cria novo seletor
@@ -165,7 +165,7 @@ class HealingEngine {
       const isValid = await selectorAnalyzer.isValidSelector(newSelector);
 
       if (!isValid) {
-        throw new Error("Seletor recuperado não é válido");
+        throw new Error('Seletor recuperado não é válido');
       }
 
       // 8. Registra sucesso
@@ -196,9 +196,10 @@ class HealingEngine {
         reason: error.message,
       });
 
-      // Relança o erro original
+      // Relança o erro original preservando a causa
       throw new Error(
         `Self-Healing falhou para seletor: ${originalSelector}. Erro: ${error.message}`,
+        { cause: error },
       );
     }
   }
@@ -247,12 +248,12 @@ class HealingEngine {
    */
   async healingWaitForExist(selector, timeout = 10000, options = {}) {
     if (!this.driver) {
-      throw new Error("HealingEngine não foi configurado. Use configure() primeiro.");
+      throw new Error('HealingEngine não foi configurado. Use configure() primeiro.');
     }
 
     try {
       await this.driver.$(selector).waitForExist({ timeout });
-    } catch (error) {
+    } catch {
       // Se falhou, tenta healing
       const element = await this.healingFind(selector, options);
       await element.waitForExist({ timeout: 5000 });

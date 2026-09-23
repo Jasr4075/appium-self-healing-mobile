@@ -5,15 +5,14 @@
  * de seletores, mantendo logs padronizados e claros.
  */
 
-import fs from "fs";
-import path from "path";
+import fs from 'fs';
+import path from 'path';
 
 class HealingLogger {
   constructor() {
     // Remove o ensureLogDirectory() do construtor (criação lazy)
     this.logDir =
-      process.env.HEALING_LOG_DIR ||
-      path.join(process.cwd(), "output", "logs", "self-healing");
+      process.env.HEALING_LOG_DIR || path.join(process.cwd(), 'output', 'logs', 'self-healing');
   }
 
   /**
@@ -40,8 +39,8 @@ class HealingLogger {
       `Original: ${originalSelector}`,
       `New: ${newSelector}`,
       `Score: ${score.toFixed(2)}`,
-      `Reasons: ${reasons.join(", ")}`,
-    ].join(" | ");
+      `Reasons: ${reasons.join(', ')}`,
+    ].join(' | ');
 
     console.log(`✅ ${message}`);
     this.writeToFile(message);
@@ -61,7 +60,7 @@ class HealingLogger {
       `Spec: ${spec}`,
       `Original: ${originalSelector}`,
       `Reason: ${reason}`,
-    ].join(" | ");
+    ].join(' | ');
 
     console.log(`❌ ${message}`);
     this.writeToFile(message);
@@ -75,7 +74,7 @@ class HealingLogger {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [DEBUG] ${message}`;
 
-    if (process.env.HEALING_DEBUG === "true") {
+    if (process.env.HEALING_DEBUG === 'true') {
       console.log(`🔍 ${logMessage}`);
     }
     this.writeToFile(logMessage);
@@ -99,11 +98,11 @@ class HealingLogger {
   writeToFile(message) {
     try {
       this.ensureLogDirectory(); // Cria apenas no momento de escrever
-      const date = new Date().toISOString().split("T")[0];
+      const date = new Date().toISOString().split('T')[0];
       const logFile = path.join(this.logDir, `healing-${date}.log`);
-      fs.appendFileSync(logFile, message + "\n", "utf8");
+      fs.appendFileSync(logFile, message + '\n', 'utf8');
     } catch (error) {
-      console.error("Erro ao escrever log:", error.message);
+      console.error('Erro ao escrever log:', error.message);
     }
   }
 
@@ -112,7 +111,7 @@ class HealingLogger {
    * @param {string} date - Data no formato YYYY-MM-DD
    * @returns {Object} Estatísticas do dia
    */
-  generateReport(date = new Date().toISOString().split("T")[0]) {
+  generateReport(date = new Date().toISOString().split('T')[0]) {
     try {
       const logFile = path.join(this.logDir, `healing-${date}.log`);
 
@@ -120,18 +119,18 @@ class HealingLogger {
         return { success: 0, failure: 0, total: 0 };
       }
 
-      const content = fs.readFileSync(logFile, "utf8");
-      const lines = content.split("\n");
+      const content = fs.readFileSync(logFile, 'utf8');
+      const lines = content.split('\n');
 
       const stats = {
-        success: lines.filter((line) => line.includes("[SELF-HEALING SUCCESS]")).length,
-        failure: lines.filter((line) => line.includes("[SELF-HEALING FAILURE]")).length,
+        success: lines.filter((line) => line.includes('[SELF-HEALING SUCCESS]')).length,
+        failure: lines.filter((line) => line.includes('[SELF-HEALING FAILURE]')).length,
         total: 0,
       };
 
       stats.total = stats.success + stats.failure;
       stats.successRate =
-        stats.total > 0 ? ((stats.success / stats.total) * 100).toFixed(2) + "%" : "0%";
+        stats.total > 0 ? ((stats.success / stats.total) * 100).toFixed(2) + '%' : '0%';
 
       return stats;
     } catch (error) {

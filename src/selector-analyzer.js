@@ -5,7 +5,7 @@
  * extraindo informações relevantes para o processo de self-healing.
  */
 
-import healingLogger from "./healing-logger.js";
+import healingLogger from './healing-logger.js';
 
 class SelectorAnalyzer {
   constructor() {
@@ -26,10 +26,10 @@ class SelectorAnalyzer {
    */
   async getScreenElements() {
     if (!this.driver) {
-      throw new Error("Driver não foi configurado. Use setDriver() primeiro.");
+      throw new Error('Driver não foi configurado. Use setDriver() primeiro.');
     }
 
-    healingLogger.logDebug("Obtendo hierarquia da tela...");
+    healingLogger.logDebug('Obtendo hierarquia da tela...');
 
     try {
       // Obtém o page source do Appium
@@ -65,7 +65,7 @@ class SelectorAnalyzer {
       const attributesStr = match[2];
 
       // Ignora tags de fechamento e hierarquia
-      if (tagName.startsWith("/") || tagName === "hierarchy") {
+      if (tagName.startsWith('/') || tagName === 'hierarchy') {
         continue;
       }
 
@@ -122,13 +122,13 @@ class SelectorAnalyzer {
     // Extrai clickable
     const clickableMatch = attributesStr.match(/clickable="([^"]*)"/);
     if (clickableMatch) {
-      element.clickable = clickableMatch[1] === "true";
+      element.clickable = clickableMatch[1] === 'true';
     }
 
     // Extrai enabled
     const enabledMatch = attributesStr.match(/enabled="([^"]*)"/);
     if (enabledMatch) {
-      element.enabled = enabledMatch[1] === "true";
+      element.enabled = enabledMatch[1] === 'true';
     }
 
     // Extrai bounds
@@ -179,10 +179,10 @@ class SelectorAnalyzer {
 
     // Ignora alguns tipos de elementos irrelevantes
     const irrelevantClasses = [
-      "android.view.ViewGroup",
-      "android.widget.LinearLayout",
-      "android.widget.RelativeLayout",
-      "android.widget.FrameLayout",
+      'android.view.ViewGroup',
+      'android.widget.LinearLayout',
+      'android.widget.RelativeLayout',
+      'android.widget.FrameLayout',
     ];
 
     if (irrelevantClasses.includes(element.class)) {
@@ -230,7 +230,7 @@ class SelectorAnalyzer {
 
     if (element.id) {
       // Verifica se é um ID completo (com pacote) ou curto
-      if (element.id.includes(":id/")) {
+      if (element.id.includes(':id/')) {
         return `android=new UiSelector().resourceId("${element.id}").instance(0)`;
       }
       return `android=new UiSelector().resourceIdMatches(".*${element.id}").instance(0)`;
@@ -257,7 +257,7 @@ class SelectorAnalyzer {
     try {
       const element = await this.driver.$(selector);
       return await element.isExisting();
-    } catch (error) {
+    } catch {
       return false;
     }
   }

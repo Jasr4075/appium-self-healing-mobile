@@ -13,10 +13,10 @@ class SimilarityScore {
    */
   getWeights() {
     const weights = {
-      class: parseFloat(process.env.HEALING_WEIGHT_CLASS || "0.4"),
-      text: parseFloat(process.env.HEALING_WEIGHT_TEXT || "0.3"),
-      id: parseFloat(process.env.HEALING_WEIGHT_ID || "0.2"),
-      position: parseFloat(process.env.HEALING_WEIGHT_POSITION || "0.1"),
+      class: parseFloat(process.env.HEALING_WEIGHT_CLASS || '0.4'),
+      text: parseFloat(process.env.HEALING_WEIGHT_TEXT || '0.3'),
+      id: parseFloat(process.env.HEALING_WEIGHT_ID || '0.2'),
+      position: parseFloat(process.env.HEALING_WEIGHT_POSITION || '0.1'),
     };
 
     // Validação: soma dos pesos deve ser aproximadamente 1.0
@@ -34,7 +34,7 @@ class SimilarityScore {
    */
   getMinThreshold() {
     // Aumentado de 0.5 para 0.70 para maior confiabilidade
-    return parseFloat(process.env.HEALING_MIN_THRESHOLD || "0.70");
+    return parseFloat(process.env.HEALING_MIN_THRESHOLD || '0.70');
   }
 
   get MIN_THRESHOLD() {
@@ -68,10 +68,10 @@ class SimilarityScore {
     if (selectorInfo.class && candidate.class) {
       if (selectorInfo.class === candidate.class) {
         scores.class = 1.0;
-        reasons.push("class-exact");
+        reasons.push('class-exact');
       } else if (this.isSimilarClass(selectorInfo.class, candidate.class)) {
         scores.class = 0.5;
-        reasons.push("class-similar");
+        reasons.push('class-similar');
       }
     }
 
@@ -81,9 +81,9 @@ class SimilarityScore {
       scores.text = textScore;
 
       if (textScore >= 0.9) {
-        reasons.push("text-exact");
+        reasons.push('text-exact');
       } else if (textScore >= 0.6) {
-        reasons.push("text-similar");
+        reasons.push('text-similar');
       }
     }
 
@@ -91,10 +91,10 @@ class SimilarityScore {
     if (selectorInfo.id && candidate.id) {
       if (selectorInfo.id === candidate.id) {
         scores.id = 1.0;
-        reasons.push("id-exact");
+        reasons.push('id-exact');
       } else if (this.isPartialMatch(selectorInfo.id, candidate.id)) {
         scores.id = 0.7;
-        reasons.push("id-partial");
+        reasons.push('id-partial');
       }
     }
 
@@ -104,7 +104,7 @@ class SimilarityScore {
       scores.position = positionScore;
 
       if (positionScore >= 0.8) {
-        reasons.push("position-close");
+        reasons.push('position-close');
       }
     }
 
@@ -142,17 +142,17 @@ class SimilarityScore {
     };
 
     // Detecta tipo de seletor
-    if (selector.startsWith("~")) {
-      info.type = "accessibility";
+    if (selector.startsWith('~')) {
+      info.type = 'accessibility';
       info.value = selector.substring(1);
     }
     // UiSelector format: android=new UiSelector().text("value")
-    else if (selector.includes("UiSelector")) {
+    else if (selector.includes('UiSelector')) {
       // Extrai texto
       let textMatch = selector.match(/\.text\s*\(\s*["']([^"']+)["']\s*\)/);
       if (textMatch) {
         info.text = textMatch[1];
-        info.type = "text";
+        info.type = 'text';
       }
 
       // Extrai className
@@ -165,7 +165,7 @@ class SimilarityScore {
       let idMatch = selector.match(/\.resourceId\s*\(\s*["']([^"']+)["']\s*\)/);
       if (idMatch) {
         info.id = idMatch[1];
-        info.type = "id";
+        info.type = 'id';
       }
 
       // Extrai instance (posição) quando presente
@@ -175,16 +175,16 @@ class SimilarityScore {
       }
     }
     // XPath format
-    else if (selector.includes("resource-id")) {
-      info.type = "id";
+    else if (selector.includes('resource-id')) {
+      info.type = 'id';
       const match = selector.match(/resource-id["\s]*[=:]["\s]*([^"'\]]+)/);
       info.id = match ? match[1] : null;
-    } else if (selector.includes("@text")) {
-      info.type = "text";
+    } else if (selector.includes('@text')) {
+      info.type = 'text';
       const match = selector.match(/@text["\s]*[=:]["\s]*['"]([^"'\]]+)['"]/);
       info.text = match ? match[1] : null;
-    } else if (selector.includes("android.widget")) {
-      info.type = "class";
+    } else if (selector.includes('android.widget')) {
+      info.type = 'class';
       const match = selector.match(/(android\.widget\.[A-Za-z]+)/);
       info.class = match ? match[1] : null;
     }
@@ -200,8 +200,8 @@ class SimilarityScore {
    */
   isSimilarClass(class1, class2) {
     // Remove pacote e compara apenas o nome da classe
-    const name1 = class1.split(".").pop();
-    const name2 = class2.split(".").pop();
+    const name1 = class1.split('.').pop();
+    const name2 = class2.split('.').pop();
 
     // Verifica se são da mesma família (Button, TextView, etc)
     return name1 === name2 || name1.includes(name2) || name2.includes(name1);
