@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "success": false,
+      "originalSelector": "android=new UiSelector().text(\"Painel\")",
+      "newSelector": null,
+      "score": null,
+      "reasons": "Nenhum candidato válido encontrado"
+    },
+    {
+      "success": false,
+      "originalSelector": "android=new UiSelector().className(\"android.widget.EditText\").resourceId(\"input_auth_email\").description(\"E-mail\")",
+      "newSelector": null,
+      "score": null,
+      "reasons": "Nenhum candidato válido encontrado"
+    }
+  ]
+}

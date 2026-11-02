@@ -1,0 +1,11 @@
+{
+  "entries": [
+    {
+      "success": false,
+      "originalSelector": "android=new UiSelector().text(\"Painel\")",
+      "newSelector": null,
+      "score": null,
+      "reasons": "Nenhum candidato válido encontrado"
+    }
+  ]
+}

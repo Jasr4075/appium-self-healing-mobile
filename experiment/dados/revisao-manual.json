@@ -1,0 +1,20 @@
+{
+  "M1-trat-r1": "correto",
+  "M1-trat-r2": "correto",
+  "M1-trat-r3": "correto",
+  "M2-trat-r1": "nao-curou",
+  "M2-trat-r2": "nao-curou",
+  "M2-trat-r3": "nao-curou",
+  "M3-trat-r1": "errado",
+  "M3-trat-r2": "errado",
+  "M3-trat-r3": "errado",
+  "M4-trat-r1": "sem-efeito",
+  "M4-trat-r2": "sem-efeito",
+  "M4-trat-r3": "sem-efeito",
+  "M5-trat-r1": "recusa-correta",
+  "M5-trat-r2": "recusa-correta",
+  "M5-trat-r3": "recusa-correta",
+  "M6-trat-r2": "errado",
+  "M6-trat-r3": "errado",
+  "M6-trat-r1": "errado"
+}

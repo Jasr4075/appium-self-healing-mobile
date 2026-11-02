@@ -1,0 +1,25 @@
+{
+  "entries": [
+    {
+      "success": false,
+      "originalSelector": "android=new UiSelector().text(\"Painel\")",
+      "newSelector": null,
+      "score": null,
+      "reasons": "Nenhum candidato válido encontrado"
+    },
+    {
+      "success": true,
+      "originalSelector": "android=new UiSelector().className(\"android.widget.Button\").resourceId(\"btn_auth_use_email\").description(\"Entrar com e-mail\")",
+      "newSelector": "android=new UiSelector().resourceIdMatches(\".*btn_auth_use_phone\").instance(0)",
+      "score": 0.75,
+      "reasons": "class-exact, desc-similar, id-partial"
+    },
+    {
+      "success": false,
+      "originalSelector": "android=new UiSelector().className(\"android.widget.EditText\").resourceId(\"input_auth_email\").description(\"E-mail\")",
+      "newSelector": null,
+      "score": null,
+      "reasons": "Nenhum candidato válido encontrado"
+    }
+  ]
+}

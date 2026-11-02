@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "success": false,
+      "originalSelector": "android=new UiSelector().text(\"Painel\")",
+      "newSelector": null,
+      "score": null,
+      "reasons": "Nenhum candidato válido encontrado"
+    },
+    {
+      "success": true,
+      "originalSelector": "android=new UiSelector().className(\"android.widget.EditText\").resourceId(\"input_auth_email\").description(\"E-mail\")",
+      "newSelector": "android=new UiSelector().resourceIdMatches(\".*input_auth_email\").instance(0)",
+      "score": 0.64,
+      "reasons": "class-exact, id-exact"
+    }
+  ]
+}

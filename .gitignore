@@ -20,3 +20,9 @@ coverage/*
 .idea/
 .DS_Store
 Thumbs.db
+# Exceções: evidências do experimento (logs brutos versionados)
+!experiment/dados/logs/**/*.log
+!experiment/dados/vigia.log
+
+# Pacotes gerados localmente
+*.tgz

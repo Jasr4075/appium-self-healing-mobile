@@ -1,0 +1,159 @@
+
+Execution of 1 workers started at 2026-09-25T19:59:43.519Z
+
+[2026-09-25T19:59:43.529Z] [WDIO] INFO 🔧 Iniciando preparação do ambiente...
+
+🔍 Validando variáveis de ambiente...
+
+✅ Variáveis de ambiente validadas com sucesso!
+
+📋 Configuração do ambiente:
+   Email do app: ✓ definido
+   Senha do app: ✓ definida
+
+
+⚠️  Avisos de configuração (WDIO runtime):
+  - WDIO_APP não definido - assumindo app já instalado no dispositivo
+
+📂 Preparando diretórios...
+
+🧹 Limpando diretório: output/allure-results
+📁 Criado: output/allure-results
+🧹 Limpando diretório: output/logs
+📁 Criado: output/logs
+🧹 Limpando diretório: output/screenshots
+📁 Criado: output/screenshots
+🧹 Limpando diretório: output/gravacoes
+📁 Criado: output/gravacoes
+🧹 Limpando diretório: output/tmp
+📁 Criado: output/tmp
+🧹 Limpando diretório: output/apk-manager
+📁 Criado: output/apk-manager
+
+✅ Diretórios preparados: 6/6
+
+[2026-09-25T19:59:43.719Z] [WDIO] SUCCESS OK 🗑️  Limpeza do dispositivo ***UDID***: forwards ADB removidos, io.appium.uiautomator2.server: encerrado, io.appium.uiautomator2.server.test: encerrado, com.ifiandi.ifiandi: encerrado
+[2026-09-25T19:59:43.719Z] [WDIO] INFO 📱 Usando app já instalado no dispositivo
+[0-0] [2026-09-25T19:59:45.251Z] [#0-0] [SCREEN-CAPTURE] INFO Captura de telas ativada → /home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/output/screen-capture/run-2026-09-25T19-59-45-250Z
+[0-0] [2026-09-25T19:59:45.350Z] [#0-0] [INIT] INFO AppPage carregado
+[0-0] [2026-09-25T19:59:45.350Z] [#0-0] [INIT] INFO AuthPage (iFiandi) carregado
+[0-0] [2026-09-25T19:59:45.350Z] [#0-0] [INIT] INFO HomePage (iFiandi) carregado
+[0-0] RUNNING in Android(16) on Android - file:///home/usuario/Secret%C3%A1ria/TCC_TUDO_IA/implementacao_tcc/tests/specs/ifiandi/LoginEmail.spec.js
+[0-0] ℹ️  [2026-09-25T19:59:49.602Z] [INFO] Self-Healing configurado para spec: LoginEmail.spec.js
+[0-0] ℹ️  [2026-09-25T19:59:49.602Z] [INFO] Self-Healing ativado
+[0-0] ℹ️  [2026-09-25T19:59:49.602Z] [INFO] Sistema de Self-Healing inicializado
+[0-0] [2026-09-25T19:59:49.603Z] [#0-0] [WDIO] INFO ⚕️  Self-Healing inicializado para: LoginEmail.spec.js
+[0-0] [2026-09-25T19:59:49.604Z] [#0-0] [SUITE] INFO START iFiandi — Login por e-mail
+[0-0] [2026-09-25T19:59:49.607Z] [#0-0] [SPEC] INFO START deve autenticar com e-mail/senha e acessar a Home
+[0-0] [2026-09-25T19:59:49.607Z] [#0-0] [HomePage] INFO START estaNaHome
+[0-0] [2026-09-25T19:59:49.607Z] [#0-0] [HomePage] INFO START findTabPainel
+[0-0] [2026-09-25T19:59:49.607Z] [#0-0] [HomePage] INFO Buscando elemento com 2 estratégias
+[0-0] [2026-09-25T19:59:50.877Z] [#0-0] [HomePage] WARN WARN ⚕️  Todas as tentativas falharam. Ativando Self-Healing com referência: android=new UiSelector().text("Painel")
+[0-0] ℹ️  [2026-09-25T19:59:50.948Z] [INFO] Elemento não encontrado. Iniciando self-healing para: android=new UiSelector().text("Painel")
+[0-0] ❌ [2026-09-25T19:59:50.999Z] | [SELF-HEALING FAILURE] | Spec: LoginEmail.spec.js | Original: android=new UiSelector().text("Painel") | Reason: Nenhum candidato válido encontrado
+[0-0] [2026-09-25T19:59:50.999Z] [#0-0] [HomePage] WARN WARN ❌ Self-Healing também falhou: Self-Healing falhou para seletor: android=new UiSelector().text("Painel"). Erro: Nenhum candidato válido encontrado
+[0-0] [2026-09-25T19:59:50.999Z] [#0-0] [HomePage] WARN WARN Elemento não encontrado após 2 tentativas, usando fallback
+[0-0] [2026-09-25T19:59:51.052Z] [#0-0] [HomePage] SUCCESS OK END findTabPainel (1444ms)
+[0-0] [2026-09-25T19:59:51.052Z] [#0-0] [HomePage] INFO START isElementVisible | {"args":[{"sessionId":"8bec57cf-d0b6-4ab5-93fa-5c9282970095","error":{"error":"no such element","message":"An element could not be located on the page using the given search parameters.","stacktrace":"NoSuchElementError: An element could not be located on the page using the given search parameters.\n    at AndroidUiautomator2Driver.findElOrEls (/home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)\n    at AndroidUiautomator2Driver.findElement (/home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)"},"selector":"android=new UiSelector().text(\"Painel\")","parent":{"sessionId":"8bec57cf-d0b6-4ab5-93fa-5c9282970095","capabilities":{"platformName":"Android","automationName":"UiAutomator2","udid":"***UDID***","deviceName":"***UDID***","platformVersion":"17","appPackage":"com.ifiandi.ifiandi","appActivity":"com.ifiandi.ifiandi.MainActivity","noReset":false,"fullReset":false,"dontStopAppOnReset":false,"skipServerInstallation":false,"skipDeviceInitialization":false,"systemPort":8200,"uiautomator2ServerLaunchTimeout":120000,"uiautomator2ServerInstallTimeout":120000,"adbExecTimeout":120000,"disableWindowAnimation":true,"skipUnlock":true,"autoGrantPermissions":true,"ignoreHiddenApiPolicyError":true,"ensureWebviewsHavePages":true,"nativeWebScreenshot":true,"newCommandTimeout":600000,"skipLogcatCapture":false,"allowInvisibleElements":false,"enforceAppInstall":false,"clearSystemFiles":true,"disableSuppressAccessibilityService":false,"mjpegServerPort":7810,"wdaLocalPort":8100,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","automationName":"UiAutomator2","udid":"***UDID***","deviceName":"motorola edge 70","platformVersion":"16","appPackage":"com.ifiandi.ifiandi","appActivity":"com.ifiandi.ifiandi.MainActivity","noReset":false,"fullReset":false,"dontStopAppOnReset":false,"skipServerInstallation":false,"skipDeviceInitialization":false,"systemPort":8200,"uiautomator2ServerLaunchTimeout":120000,"uiautomator2ServerInstallTimeout":120000,"adbExecTimeout":120000,"disableWindowAnimation":true,"skipUnlock":true,"autoGrantPermissions":true,"ignoreHiddenApiPolicyError":true,"ensureWebviewsHavePages":true,"nativeWebScreenshot":true,"newCommandTimeout":600000,"skipLogcatCapture":false,"allowInvisibleElements":false,"enforceAppInstall":false,"clearSystemFiles":true,"disableSuppressAccessibilityService":false,"mjpegServerPort":7810,"wdaLocalPort":8100},"deviceUDID":"***UDID***","pixelRatio":"3.2625","statBarHeight":136,"viewportRect":{"left":0,"top":136,"width":1220,"height":2576},"deviceApiLevel":37,"deviceManufacturer":"motorola","deviceModel":"motorola edge 70","deviceScreenSize":"1220x2712","deviceScreenDensity":522}},"isReactElement":false,"isShadowElement":false}]}
+[0-0] [2026-09-25T19:59:51.100Z] [#0-0] [HomePage] SUCCESS OK END isElementVisible (48ms)
+[0-0] [2026-09-25T19:59:51.100Z] [#0-0] [HomePage] INFO Home visível: false
+[0-0] [2026-09-25T19:59:51.100Z] [#0-0] [HomePage] SUCCESS OK END estaNaHome (1493ms)
+[0-0] [2026-09-25T19:59:51.100Z] [#0-0] [ifiandiLogin] INFO Já autenticado (Home visível): false
+[0-0] [2026-09-25T19:59:51.100Z] [#0-0] [AppPage] INFO START ativarApp
+[0-0] [2026-09-25T19:59:51.100Z] [#0-0] [INFO] INFO ativarApp: Ativando aplicativo...
+[0-0] [2026-09-25T19:59:51.100Z] [#0-0] [AppPage] INFO START obterEstadoApp
+[0-0] [2026-09-25T19:59:51.904Z] [#0-0] [AppPage] SUCCESS OK END obterEstadoApp (804ms)
+[0-0] [2026-09-25T19:59:51.904Z] [#0-0] [INFO] INFO ativarApp: App já está em foreground
+[0-0] [2026-09-25T19:59:51.904Z] [#0-0] [AppPage] SUCCESS OK END ativarApp (804ms)
+[0-0] [2026-09-25T19:59:51.904Z] [#0-0] [AuthPage] INFO START alternarParaEmail
+[0-0] [2026-09-25T19:59:51.904Z] [#0-0] [AuthPage] INFO Alternando para login por e-mail
+[0-0] [2026-09-25T19:59:51.904Z] [#0-0] [AuthPage] INFO START findBtnToggleEmail
+[0-0] [2026-09-25T19:59:51.904Z] [#0-0] [AuthPage] INFO Buscando elemento com 1 estratégias
+[0-0] [2026-09-25T19:59:52.001Z] [#0-0] [AuthPage] WARN WARN ⚕️  Todas as tentativas falharam. Ativando Self-Healing com referência: android=new UiSelector().className("android.widget.Button").resourceId("btn_auth...
+[0-0] ℹ️  [2026-09-25T19:59:52.099Z] [INFO] Elemento não encontrado. Iniciando self-healing para: android=new UiSelector().className("android.widget.Button").resourceId("btn_auth_use_email").description("Entrar com e-mail")
+[0-0] ✅ [2026-09-25T19:59:52.195Z] | [SELF-HEALING SUCCESS] | Spec: LoginEmail.spec.js | Original: android=new UiSelector().className("android.widget.Button").resourceId("btn_auth_use_email").description("Entrar com e-mail") | New: android=new UiSelector().resourceIdMatches(".*btn_auth_use_phone").instance(0) | Score: 0.75 | Reasons: class-exact, desc-similar, id-partial
+[0-0] [2026-09-25T19:59:52.265Z] [#0-0] [AuthPage] INFO ✅ Self-Healing encontrou elemento alternativo!
+[0-0] [2026-09-25T19:59:52.265Z] [#0-0] [AuthPage] SUCCESS OK END findBtnToggleEmail (361ms)
+[0-0] [2026-09-25T19:59:52.265Z] [#0-0] [AuthPage] INFO START clickElement | {"args":[{"sessionId":"8bec57cf-d0b6-4ab5-93fa-5c9282970095","elementId":"00000000-0000-0e2e-ffff-ffff00000023","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-0e2e-ffff-ffff00000023","selector":"android=new UiSelector().resourceIdMatches(\".*btn_auth_use_phone\").instance(0)","parent":{"sessionId":"8bec57cf-d0b6-4ab5-93fa-5c9282970095","capabilities":{"platformName":"Android","automationName":"UiAutomator2","udid":"***UDID***","deviceName":"***UDID***","platformVersion":"17","appPackage":"com.ifiandi.ifiandi","appActivity":"com.ifiandi.ifiandi.MainActivity","noReset":false,"fullReset":false,"dontStopAppOnReset":false,"skipServerInstallation":false,"skipDeviceInitialization":false,"systemPort":8200,"uiautomator2ServerLaunchTimeout":120000,"uiautomator2ServerInstallTimeout":120000,"adbExecTimeout":120000,"disableWindowAnimation":true,"skipUnlock":true,"autoGrantPermissions":true,"ignoreHiddenApiPolicyError":true,"ensureWebviewsHavePages":true,"nativeWebScreenshot":true,"newCommandTimeout":600000,"skipLogcatCapture":false,"allowInvisibleElements":false,"enforceAppInstall":false,"clearSystemFiles":true,"disableSuppressAccessibilityService":false,"mjpegServerPort":7810,"wdaLocalPort":8100,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","automationName":"UiAutomator2","udid":"***UDID***","deviceName":"motorola edge 70","platformVersion":"16","appPackage":"com.ifiandi.ifiandi","appActivity":"com.ifiandi.ifiandi.MainActivity","noReset":false,"fullReset":false,"dontStopAppOnReset":false,"skipServerInstallation":false,"skipDeviceInitialization":false,"systemPort":8200,"uiautomator2ServerLaunchTimeout":120000,"uiautomator2ServerInstallTimeout":120000,"adbExecTimeout":120000,"disableWindowAnimation":true,"skipUnlock":true,"autoGrantPermissions":true,"ignoreHiddenApiPolicyError":true,"ensureWebviewsHavePages":true,"nativeWebScreenshot":true,"newCommandTimeout":600000,"skipLogcatCapture":false,"allowInvisibleElements":false,"enforceAppInstall":false,"clearSystemFiles":true,"disableSuppressAccessibilityService":false,"mjpegServerPort":7810,"wdaLocalPort":8100},"deviceUDID":"***UDID***","pixelRatio":"3.2625","statBarHeight":136,"viewportRect":{"left":0,"top":136,"width":1220,"height":2576},"deviceApiLevel":37,"deviceManufacturer":"motorola","deviceModel":"motorola edge 70","deviceScreenSize":"1220x2712","deviceScreenDensity":522}},"isReactElement":false,"isShadowElement":false},10000]}
+[0-0] [2026-09-25T19:59:52.265Z] [#0-0] [AuthPage] INFO START waitForVisible | {"args":[{"sessionId":"8bec57cf-d0b6-4ab5-93fa-5c9282970095","elementId":"00000000-0000-0e2e-ffff-ffff00000023","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-0e2e-ffff-ffff00000023","selector":"android=new UiSelector().resourceIdMatches(\".*btn_auth_use_phone\").instance(0)","parent":{"sessionId":"8bec57cf-d0b6-4ab5-93fa-5c9282970095","capabilities":{"platformName":"Android","automationName":"UiAutomator2","udid":"***UDID***","deviceName":"***UDID***","platformVersion":"17","appPackage":"com.ifiandi.ifiandi","appActivity":"com.ifiandi.ifiandi.MainActivity","noReset":false,"fullReset":false,"dontStopAppOnReset":false,"skipServerInstallation":false,"skipDeviceInitialization":false,"systemPort":8200,"uiautomator2ServerLaunchTimeout":120000,"uiautomator2ServerInstallTimeout":120000,"adbExecTimeout":120000,"disableWindowAnimation":true,"skipUnlock":true,"autoGrantPermissions":true,"ignoreHiddenApiPolicyError":true,"ensureWebviewsHavePages":true,"nativeWebScreenshot":true,"newCommandTimeout":600000,"skipLogcatCapture":false,"allowInvisibleElements":false,"enforceAppInstall":false,"clearSystemFiles":true,"disableSuppressAccessibilityService":false,"mjpegServerPort":7810,"wdaLocalPort":8100,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","automationName":"UiAutomator2","udid":"***UDID***","deviceName":"motorola edge 70","platformVersion":"16","appPackage":"com.ifiandi.ifiandi","appActivity":"com.ifiandi.ifiandi.MainActivity","noReset":false,"fullReset":false,"dontStopAppOnReset":false,"skipServerInstallation":false,"skipDeviceInitialization":false,"systemPort":8200,"uiautomator2ServerLaunchTimeout":120000,"uiautomator2ServerInstallTimeout":120000,"adbExecTimeout":120000,"disableWindowAnimation":true,"skipUnlock":true,"autoGrantPermissions":true,"ignoreHiddenApiPolicyError":true,"ensureWebviewsHavePages":true,"nativeWebScreenshot":true,"newCommandTimeout":600000,"skipLogcatCapture":false,"allowInvisibleElements":false,"enforceAppInstall":false,"clearSystemFiles":true,"disableSuppressAccessibilityService":false,"mjpegServerPort":7810,"wdaLocalPort":8100},"deviceUDID":"***UDID***","pixelRatio":"3.2625","statBarHeight":136,"viewportRect":{"left":0,"top":136,"width":1220,"height":2576},"deviceApiLevel":37,"deviceManufacturer":"motorola","deviceModel":"motorola edge 70","deviceScreenSize":"1220x2712","deviceScreenDensity":522}},"isReactElement":false,"isShadowElement":false},10000]}
+[0-0] [2026-09-25T19:59:52.294Z] [#0-0] [AuthPage] SUCCESS OK END waitForVisible (29ms)
+[0-0] [2026-09-25T19:59:53.050Z] [#0-0] [AuthPage] SUCCESS OK END clickElement (785ms)
+[0-0] [2026-09-25T19:59:53.050Z] [#0-0] [AuthPage] INFO START pause | {"args":[800]}
+[0-0] [2026-09-25T19:59:53.851Z] [#0-0] [AuthPage] SUCCESS OK END pause (801ms)
+[0-0] [2026-09-25T19:59:53.851Z] [#0-0] [AuthPage] SUCCESS OK END alternarParaEmail (1947ms)
+[0-0] [2026-09-25T19:59:53.851Z] [#0-0] [AuthPage] INFO START preencherLogin | {"args":["usuario@example.com","***SENHA***"]}
+[0-0] [2026-09-25T19:59:53.852Z] [#0-0] [AuthPage] INFO START findInputEmail
+[0-0] [2026-09-25T19:59:53.852Z] [#0-0] [AuthPage] INFO Buscando elemento com 1 estratégias
+[0-0] [2026-09-25T19:59:53.959Z] [#0-0] [AuthPage] WARN WARN ⚕️  Todas as tentativas falharam. Ativando Self-Healing com referência: android=new UiSelector().className("android.widget.EditText").resourceId("input_...
+[0-0] ℹ️  [2026-09-25T19:59:54.076Z] [INFO] Elemento não encontrado. Iniciando self-healing para: android=new UiSelector().className("android.widget.EditText").resourceId("input_auth_email").description("E-mail")
+[0-0] ❌ [2026-09-25T19:59:54.133Z] | [SELF-HEALING FAILURE] | Spec: LoginEmail.spec.js | Original: android=new UiSelector().className("android.widget.EditText").resourceId("input_auth_email").description("E-mail") | Reason: Nenhum candidato válido encontrado
+[0-0] [2026-09-25T19:59:54.133Z] [#0-0] [AuthPage] WARN WARN ❌ Self-Healing também falhou: Self-Healing falhou para seletor: android=new UiSelector().className("android.widget.EditText").resourceId("input_auth_email").description("E-mail"). Erro: Nenhum candidato válido encontrado
+[0-0] [2026-09-25T19:59:54.133Z] [#0-0] [AuthPage] WARN WARN Elemento não encontrado após 1 tentativas, usando fallback
+[0-0] [2026-09-25T19:59:54.184Z] [#0-0] [AuthPage] SUCCESS OK END findInputEmail (332ms)
+[0-0] [2026-09-25T19:59:54.184Z] [#0-0] [AuthPage] INFO START waitForVisible | {"args":[{"sessionId":"8bec57cf-d0b6-4ab5-93fa-5c9282970095","error":{"error":"no such element","message":"An element could not be located on the page using the given search parameters.","stacktrace":"NoSuchElementError: An element could not be located on the page using the given search parameters.\n    at AndroidUiautomator2Driver.findElOrEls (/home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)\n    at AndroidUiautomator2Driver.findElement (/home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)"},"selector":"android=new UiSelector().className(\"android.widget.EditText\").resourceId(\"input_auth_email\").description(\"E-mail\")","parent":{"sessionId":"8bec57cf-d0b6-4ab5-93fa-5c9282970095","capabilities":{"platformName":"Android","automationName":"UiAutomator2","udid":"***UDID***","deviceName":"***UDID***","platformVersion":"17","appPackage":"com.ifiandi.ifiandi","appActivity":"com.ifiandi.ifiandi.MainActivity","noReset":false,"fullReset":false,"dontStopAppOnReset":false,"skipServerInstallation":false,"skipDeviceInitialization":false,"systemPort":8200,"uiautomator2ServerLaunchTimeout":120000,"uiautomator2ServerInstallTimeout":120000,"adbExecTimeout":120000,"disableWindowAnimation":true,"skipUnlock":true,"autoGrantPermissions":true,"ignoreHiddenApiPolicyError":true,"ensureWebviewsHavePages":true,"nativeWebScreenshot":true,"newCommandTimeout":600000,"skipLogcatCapture":false,"allowInvisibleElements":false,"enforceAppInstall":false,"clearSystemFiles":true,"disableSuppressAccessibilityService":false,"mjpegServerPort":7810,"wdaLocalPort":8100,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","automationName":"UiAutomator2","udid":"***UDID***","deviceName":"motorola edge 70","platformVersion":"16","appPackage":"com.ifiandi.ifiandi","appActivity":"com.ifiandi.ifiandi.MainActivity","noReset":false,"fullReset":false,"dontStopAppOnReset":false,"skipServerInstallation":false,"skipDeviceInitialization":false,"systemPort":8200,"uiautomator2ServerLaunchTimeout":120000,"uiautomator2ServerInstallTimeout":120000,"adbExecTimeout":120000,"disableWindowAnimation":true,"skipUnlock":true,"autoGrantPermissions":true,"ignoreHiddenApiPolicyError":true,"ensureWebviewsHavePages":true,"nativeWebScreenshot":true,"newCommandTimeout":600000,"skipLogcatCapture":false,"allowInvisibleElements":false,"enforceAppInstall":false,"clearSystemFiles":true,"disableSuppressAccessibilityService":false,"mjpegServerPort":7810,"wdaLocalPort":8100},"deviceUDID":"***UDID***","pixelRatio":"3.2625","statBarHeight":136,"viewportRect":{"left":0,"top":136,"width":1220,"height":2576},"deviceApiLevel":37,"deviceManufacturer":"motorola","deviceModel":"motorola edge 70","deviceScreenSize":"1220x2712","deviceScreenDensity":522}},"isReactElement":false,"isShadowElement":false},15000]}
+[0-0] [2026-09-25T20:00:09.184Z] [#0-0] [AuthPage] ERROR ERROR waitForVisible (15000ms) | Elemento não ficou visível após 15000ms
+[0-0] [2026-09-25T20:00:09.185Z] [#0-0] [AuthPage] ERROR ERROR preencherLogin (15334ms) | Elemento não ficou visível após 15000ms
+[0-0] [2026-09-25T20:00:09.227Z] [#0-0] [TestArtifacts] INFO Capturando informações do teste falho: deve autenticar com e-mail/senha e acessar a Home
+[0-0] [2026-09-25T20:00:09.363Z] [#0-0] [TestArtifacts] INFO Page Source capturado: /home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/output/logs/2026-09-25T20-00-09-227Z_deve_autenticar_com_e_mail_senha_e_acessar_a_Home_pagesource.xml
+[0-0] [2026-09-25T20:00:09.421Z] [#0-0] [TestArtifacts] INFO Logcat capturado: /home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/output/logs/2026-09-25T20-00-09-228Z_deve_autenticar_com_e_mail_senha_e_acessar_a_Home_logcat.json
+[0-0] [2026-09-25T20:00:09.932Z] [#0-0] [TestArtifacts] INFO Screenshot capturado: /home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/output/screenshots/2026-09-25T20-00-09-227Z_deve_autenticar_com_e_mail_senha_e_acessar_a_Home.png
+[0-0] [2026-09-25T20:00:10.757Z] [#0-0] [TestArtifacts] WARN WARN Driver info não disponível: WebDriverError: Method has not yet been implemented when running "url" with method "GET"
+[0-0] [2026-09-25T20:00:11.246Z] [#0-0] [TestArtifacts] SUCCESS OK Debug info salva para análise
+[0-0] [2026-09-25T20:00:11.246Z] [#0-0] [TestResult] ERROR ERROR deve autenticar com e-mail/senha e acessar a Home (19621ms) | Elemento não ficou visível após 15000ms
+[0-0] [2026-09-25T20:00:11.246Z] [#0-0] [TestResult] ERROR ERROR Stack trace: at async Proxy.waitForVisible (file:///home/usuario/Secret%C3%A1ria/TCC_TUDO_IA/implementacao_tcc/src/automation/pages/base.page.js:40:5)
+[0-0] Error in "iFiandi — Login por e-mail.deve autenticar com e-mail/senha e acessar a Home"
+Error: Elemento não ficou visível após 15000ms
+    at async Proxy.waitForVisible (file:///home/usuario/Secret%C3%A1ria/TCC_TUDO_IA/implementacao_tcc/src/automation/pages/base.page.js:40:5)
+    at async Proxy.wrapped (file:///home/usuario/Secret%C3%A1ria/TCC_TUDO_IA/implementacao_tcc/src/core/logger/logger.js:77:25)
+    at async Proxy.preencherLogin (file:///home/usuario/Secret%C3%A1ria/TCC_TUDO_IA/implementacao_tcc/src/automation/pages/ifiandi/auth.page.js:67:5)
+[0-0] [2026-09-25T20:00:11.249Z] [#0-0] [SUITE] SUCCESS OK END iFiandi — Login por e-mail
+[0-0] FAILED in Android(16) on Android - file:///home/usuario/Secret%C3%A1ria/TCC_TUDO_IA/implementacao_tcc/tests/specs/ifiandi/LoginEmail.spec.js
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[Android #0-0] Running: on Android
+[Android #0-0] Session ID: 8bec57cf-d0b6-4ab5-93fa-5c9282970095
+[Android #0-0]
+[Android #0-0] » tests/specs/ifiandi/LoginEmail.spec.js
+[Android #0-0] iFiandi — Login por e-mail
+[Android #0-0]    ✖ deve autenticar com e-mail/senha e acessar a Home
+[Android #0-0]
+[Android #0-0] 1 failing (21.9s)
+[Android #0-0]
+[Android #0-0] 1) iFiandi — Login por e-mail deve autenticar com e-mail/senha e acessar a Home
+[Android #0-0] Elemento não ficou visível após 15000ms
+[Android #0-0] Error: Elemento não ficou visível após 15000ms
+[Android #0-0]     at async Proxy.waitForVisible (file:///home/usuario/Secret%C3%A1ria/TCC_TUDO_IA/implementacao_tcc/src/automation/pages/base.page.js:40:5)
+[Android #0-0]     at async Proxy.wrapped (file:///home/usuario/Secret%C3%A1ria/TCC_TUDO_IA/implementacao_tcc/src/core/logger/logger.js:77:25)
+[Android #0-0]     at async Proxy.preencherLogin (file:///home/usuario/Secret%C3%A1ria/TCC_TUDO_IA/implementacao_tcc/src/automation/pages/ifiandi/auth.page.js:67:5)
+
+
+Spec Files:	 0 passed, 1 failed, 1 total (100% completed) in 00:00:28  
+
+[2026-09-25T20:00:11.944Z] [WDIO] INFO 📋 Finalizando execução...
+[2026-09-25T20:00:11.944Z] [WDIO] INFO ℹ️  Sessão do browser já encerrada
+ℹ️  Gerando relatório Markdown
+ℹ️  Relatório gerado: /home/usuario/Secretária/TCC_TUDO_IA/implementacao_tcc/output/test-reports/motorola_edge_70_motorola_edge_70_***UDID***_1790366411951.md
+
+============================================================
+📊 RESUMO DA EXECUÇÃO
+============================================================
+📱 Dispositivo: motorola edge 70
+🆔 App ID: com.ifiandi.ifiandi
+📦 App Package: com.ifiandi.ifiandi
+============================================================
+🎉 SUCESSO
+============================================================
+
+
+============================================================
+📊 RESUMO DA EXECUÇÃO
+============================================================
+📱 Dispositivo: motorola edge 70
+🆔 App ID: com.ifiandi.ifiandi
+📦 App Package: com.ifiandi.ifiandi
+============================================================
+⚠️ FALHAS ENCONTRADAS
+============================================================
+
+[2026-09-25T20:00:11.952Z] [WDIO] SUCCESS OK 🏁 Processo finalizado com código: 1

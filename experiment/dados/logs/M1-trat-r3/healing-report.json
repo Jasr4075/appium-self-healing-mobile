@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "success": false,
+      "originalSelector": "android=new UiSelector().text(\"Painel\")",
+      "newSelector": null,
+      "score": null,
+      "reasons": "Nenhum candidato válido encontrado"
+    },
+    {
+      "success": true,
+      "originalSelector": "android=new UiSelector().className(\"android.widget.Button\").resourceId(\"btn_auth_signin\").description(\"Entrar\")",
+      "newSelector": "android=new UiSelector().resourceIdMatches(\".*btn_auth_submit\").instance(0)",
+      "score": 0.84,
+      "reasons": "class-exact, desc-exact, id-partial"
+    }
+  ]
+}

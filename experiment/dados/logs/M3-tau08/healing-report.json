@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "success": false,
+      "originalSelector": "android=new UiSelector().text(\"Painel\")",
+      "newSelector": null,
+      "score": null,
+      "reasons": "Nenhum candidato válido encontrado"
+    },
+    {
+      "success": false,
+      "originalSelector": "android=new UiSelector().className(\"android.widget.Button\").resourceId(\"btn_auth_use_email\").description(\"Entrar com e-mail\")",
+      "newSelector": null,
+      "score": null,
+      "reasons": "Nenhum candidato válido encontrado"
+    }
+  ]
+}

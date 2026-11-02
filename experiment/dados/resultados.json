@@ -1,0 +1,557 @@
+{
+  "metricas": {
+    "execucoes": 15,
+    "execucoesSemEfeito": 3,
+    "tp": 3,
+    "fp": 6,
+    "fn": 3,
+    "precisao": 0.3333333333333333,
+    "recall": 0.5,
+    "f1": 0.4,
+    "taxaCura": 0.2,
+    "mutacoesCuradas": 1,
+    "mutacoesTestadas": 5
+  },
+  "porMutacao": [
+    {
+      "mutacao": "M1",
+      "nome": "Identificador renomeado",
+      "categoria": "ID",
+      "descricao": "O testID do botão de envio de acesso é renomeado de btn_auth_signin para btn_auth_submit, simulando refatoração de nomenclatura no app.",
+      "portador": "resource-id (testID)",
+      "alvo": "Botão de envio do formulário de acesso por e-mail",
+      "scorePrevisto": 0.84,
+      "curaPrevista": true,
+      "falsoPositivoPrevisto": false,
+      "n": 3,
+      "nSemEfeito": 0,
+      "curas": 3,
+      "falhas": 0,
+      "falsosPositivos": 0,
+      "falhasLegitimas": 0,
+      "execucoes": [
+        {
+          "celula": "M1-trat-r1",
+          "passou": true,
+          "curou": true,
+          "score": 0.84,
+          "reasons": "class-exact, desc-exact, id-partial",
+          "seletorCurado": "android=new UiSelector().resourceIdMatches(\".*btn_auth_submit\").instance(0)",
+          "revisaoHumana": "correto",
+          "curaCorreta": true,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M1-trat-r2",
+          "passou": true,
+          "curou": true,
+          "score": 0.84,
+          "reasons": "class-exact, desc-exact, id-partial",
+          "seletorCurado": "android=new UiSelector().resourceIdMatches(\".*btn_auth_submit\").instance(0)",
+          "revisaoHumana": "correto",
+          "curaCorreta": true,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M1-trat-r3",
+          "passou": true,
+          "curou": true,
+          "score": 0.84,
+          "reasons": "class-exact, desc-exact, id-partial",
+          "seletorCurado": "android=new UiSelector().resourceIdMatches(\".*btn_auth_submit\").instance(0)",
+          "revisaoHumana": "correto",
+          "curaCorreta": true,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        }
+      ],
+      "scoreMedio": 0.84,
+      "recusaCorreta": 0,
+      "revisaoCompleta": true,
+      "controle": {
+        "passou": false,
+        "duracaoMs": 34357,
+        "tempoReparoMin": null,
+        "seletoresAlterados": null
+      },
+      "entradasHistorico": [
+        1,
+        1,
+        1
+      ],
+      "sensibilidade": [
+        {
+          "celula": "M1-tau06",
+          "tau": 0.6,
+          "passou": true,
+          "curou": true,
+          "score": 0.84,
+          "curaCorreta": true
+        },
+        {
+          "celula": "M1-tau08",
+          "tau": 0.8,
+          "passou": true,
+          "curou": true,
+          "score": 0.84,
+          "curaCorreta": true
+        }
+      ]
+    },
+    {
+      "mutacao": "M2",
+      "nome": "Rótulo alterado",
+      "categoria": "TEXTO",
+      "descricao": "O rótulo acessível do campo de e-mail muda de 'E-mail' para 'E-mail de acesso', simulando revisão de copy pelo time de produto.",
+      "portador": "content-desc / text (internacionalização)",
+      "alvo": "Campo de e-mail do formulário de acesso",
+      "scorePrevisto": 0.87,
+      "curaPrevista": true,
+      "falsoPositivoPrevisto": false,
+      "n": 3,
+      "nSemEfeito": 0,
+      "curas": 0,
+      "falhas": 3,
+      "falsosPositivos": 0,
+      "falhasLegitimas": 3,
+      "execucoes": [
+        {
+          "celula": "M2-trat-r1",
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "reasons": null,
+          "seletorCurado": null,
+          "revisaoHumana": "nao-curou",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M2-trat-r2",
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "reasons": null,
+          "seletorCurado": null,
+          "revisaoHumana": "nao-curou",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M2-trat-r3",
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "reasons": null,
+          "seletorCurado": null,
+          "revisaoHumana": "nao-curou",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        }
+      ],
+      "scoreMedio": null,
+      "recusaCorreta": 0,
+      "revisaoCompleta": true,
+      "controle": {
+        "passou": false,
+        "duracaoMs": 29530,
+        "tempoReparoMin": null,
+        "seletoresAlterados": null
+      },
+      "entradasHistorico": [
+        0,
+        0,
+        0
+      ],
+      "sensibilidade": [
+        {
+          "celula": "M2-tau06",
+          "tau": 0.6,
+          "passou": true,
+          "curou": true,
+          "score": 0.64,
+          "curaCorreta": true
+        },
+        {
+          "celula": "M2-tau08",
+          "tau": 0.8,
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "curaCorreta": false
+        }
+      ]
+    },
+    {
+      "mutacao": "M3",
+      "nome": "Identificador removido",
+      "categoria": "ID",
+      "descricao": "O testID do botão que alterna para o acesso por e-mail é removido, simulando a perda do gancho de automação em uma atualização do app.",
+      "portador": "resource-id (testID)",
+      "alvo": "Botão que alterna o acesso para e-mail",
+      "scorePrevisto": 0.75,
+      "curaPrevista": false,
+      "falsoPositivoPrevisto": true,
+      "n": 3,
+      "nSemEfeito": 0,
+      "curas": 0,
+      "falhas": 3,
+      "falsosPositivos": 3,
+      "falhasLegitimas": 3,
+      "execucoes": [
+        {
+          "celula": "M3-trat-r1",
+          "passou": false,
+          "curou": true,
+          "score": 0.75,
+          "reasons": "class-exact, desc-similar, id-partial",
+          "seletorCurado": "android=new UiSelector().resourceIdMatches(\".*btn_auth_use_phone\").instance(0)",
+          "revisaoHumana": "errado",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M3-trat-r2",
+          "passou": false,
+          "curou": true,
+          "score": 0.75,
+          "reasons": "class-exact, desc-similar, id-partial",
+          "seletorCurado": "android=new UiSelector().resourceIdMatches(\".*btn_auth_use_phone\").instance(0)",
+          "revisaoHumana": "errado",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M3-trat-r3",
+          "passou": false,
+          "curou": true,
+          "score": 0.75,
+          "reasons": "class-exact, desc-similar, id-partial",
+          "seletorCurado": "android=new UiSelector().resourceIdMatches(\".*btn_auth_use_phone\").instance(0)",
+          "revisaoHumana": "errado",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        }
+      ],
+      "scoreMedio": 0.75,
+      "recusaCorreta": 0,
+      "revisaoCompleta": true,
+      "controle": {
+        "passou": false,
+        "duracaoMs": 21933,
+        "tempoReparoMin": null,
+        "seletoresAlterados": null
+      },
+      "entradasHistorico": [
+        1,
+        1,
+        1
+      ],
+      "sensibilidade": [
+        {
+          "celula": "M3-tau06",
+          "tau": 0.6,
+          "passou": false,
+          "curou": true,
+          "score": 0.75,
+          "curaCorreta": false
+        },
+        {
+          "celula": "M3-tau08",
+          "tau": 0.8,
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "curaCorreta": false
+        }
+      ]
+    },
+    {
+      "mutacao": "M4",
+      "nome": "Reordenação dos elementos",
+      "categoria": "POSIÇÃO",
+      "descricao": "Os botões de alternância 'Entrar com telefone' e 'Entrar com e-mail' trocam de posição na linha de modes, simulando reorganização de layout.",
+      "portador": "posição na hierarquia",
+      "alvo": "Botão que alterna o acesso para e-mail",
+      "scorePrevisto": 0.9,
+      "curaPrevista": true,
+      "falsoPositivoPrevisto": false,
+      "n": 3,
+      "nSemEfeito": 3,
+      "curas": 0,
+      "falhas": 0,
+      "falsosPositivos": 0,
+      "falhasLegitimas": 0,
+      "execucoes": [
+        {
+          "celula": "M4-trat-r1",
+          "passou": true,
+          "curou": false,
+          "score": null,
+          "reasons": null,
+          "seletorCurado": null,
+          "revisaoHumana": "sem-efeito",
+          "curaCorreta": false,
+          "semEfeito": true,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M4-trat-r2",
+          "passou": true,
+          "curou": false,
+          "score": null,
+          "reasons": null,
+          "seletorCurado": null,
+          "revisaoHumana": "sem-efeito",
+          "curaCorreta": false,
+          "semEfeito": true,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M4-trat-r3",
+          "passou": true,
+          "curou": false,
+          "score": null,
+          "reasons": null,
+          "seletorCurado": null,
+          "revisaoHumana": "sem-efeito",
+          "curaCorreta": false,
+          "semEfeito": true,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        }
+      ],
+      "scoreMedio": null,
+      "recusaCorreta": 0,
+      "revisaoCompleta": true,
+      "controle": {
+        "passou": true,
+        "duracaoMs": 23372,
+        "tempoReparoMin": null,
+        "seletoresAlterados": null
+      },
+      "entradasHistorico": [
+        0,
+        0,
+        0
+      ],
+      "sensibilidade": [
+        {
+          "celula": "M4-tau06",
+          "tau": 0.6,
+          "passou": true,
+          "curou": false,
+          "score": null,
+          "curaCorreta": false
+        },
+        {
+          "celula": "M4-tau08",
+          "tau": 0.8,
+          "passou": true,
+          "curou": false,
+          "score": null,
+          "curaCorreta": false
+        }
+      ]
+    },
+    {
+      "mutacao": "M5",
+      "nome": "Classe do elemento alterada",
+      "categoria": "CLASSE",
+      "descricao": "O papel acessível do botão de envio é removido, fazendo o page source reportar a classe android.view.ViewGroup no lugar de android.widget.Button.",
+      "portador": "accessibilityRole (classe nativa)",
+      "alvo": "Botão de envio do formulário de acesso por e-mail",
+      "scorePrevisto": 0.5,
+      "curaPrevista": false,
+      "falsoPositivoPrevisto": false,
+      "n": 3,
+      "nSemEfeito": 0,
+      "curas": 0,
+      "falhas": 3,
+      "falsosPositivos": 0,
+      "falhasLegitimas": 3,
+      "execucoes": [
+        {
+          "celula": "M5-trat-r1",
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "reasons": null,
+          "seletorCurado": null,
+          "revisaoHumana": "recusa-correta",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": true,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M5-trat-r2",
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "reasons": null,
+          "seletorCurado": null,
+          "revisaoHumana": "recusa-correta",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": true,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M5-trat-r3",
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "reasons": null,
+          "seletorCurado": null,
+          "revisaoHumana": "recusa-correta",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": true,
+          "classificacaoProvisoria": false
+        }
+      ],
+      "scoreMedio": null,
+      "recusaCorreta": 3,
+      "revisaoCompleta": true,
+      "controle": {
+        "passou": false,
+        "duracaoMs": 21821,
+        "tempoReparoMin": null,
+        "seletoresAlterados": null
+      },
+      "entradasHistorico": [
+        0,
+        0,
+        0
+      ],
+      "sensibilidade": [
+        {
+          "celula": "M5-tau06",
+          "tau": 0.6,
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "curaCorreta": false
+        },
+        {
+          "celula": "M5-tau08",
+          "tau": 0.8,
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "curaCorreta": false
+        }
+      ]
+    },
+    {
+      "mutacao": "M6",
+      "nome": "Elemento removido",
+      "categoria": "AUSÊNCIA",
+      "descricao": "O botão que alterna o acesso para e-mail é removido da tela, simulando reorganização que elimina o elemento testado.",
+      "portador": "remoção do nó da hierarquia",
+      "alvo": "Botão que alterna o acesso para e-mail",
+      "scorePrevisto": 0.75,
+      "curaPrevista": false,
+      "falsoPositivoPrevisto": true,
+      "n": 3,
+      "nSemEfeito": 0,
+      "curas": 0,
+      "falhas": 3,
+      "falsosPositivos": 3,
+      "falhasLegitimas": 3,
+      "execucoes": [
+        {
+          "celula": "M6-trat-r2",
+          "passou": false,
+          "curou": true,
+          "score": 0.75,
+          "reasons": "class-exact, desc-similar, id-partial",
+          "seletorCurado": "android=new UiSelector().resourceIdMatches(\".*btn_auth_use_phone\").instance(0)",
+          "revisaoHumana": "errado",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M6-trat-r3",
+          "passou": false,
+          "curou": true,
+          "score": 0.75,
+          "reasons": "class-exact, desc-similar, id-partial",
+          "seletorCurado": "android=new UiSelector().resourceIdMatches(\".*btn_auth_use_phone\").instance(0)",
+          "revisaoHumana": "errado",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        },
+        {
+          "celula": "M6-trat-r1",
+          "passou": false,
+          "curou": true,
+          "score": 0.75,
+          "reasons": "class-exact, desc-similar, id-partial",
+          "seletorCurado": "android=new UiSelector().resourceIdMatches(\".*btn_auth_use_phone\").instance(0)",
+          "revisaoHumana": "errado",
+          "curaCorreta": false,
+          "semEfeito": false,
+          "recusaCorreta": false,
+          "classificacaoProvisoria": false
+        }
+      ],
+      "scoreMedio": 0.75,
+      "recusaCorreta": 0,
+      "revisaoCompleta": true,
+      "controle": {
+        "passou": false,
+        "duracaoMs": 22078,
+        "tempoReparoMin": null,
+        "seletoresAlterados": null
+      },
+      "entradasHistorico": [
+        1,
+        1,
+        1
+      ],
+      "sensibilidade": [
+        {
+          "celula": "M6-tau06",
+          "tau": 0.6,
+          "passou": false,
+          "curou": true,
+          "score": 0.75,
+          "curaCorreta": false
+        },
+        {
+          "celula": "M6-tau08",
+          "tau": 0.8,
+          "passou": false,
+          "curou": false,
+          "score": null,
+          "curaCorreta": false
+        }
+      ]
+    }
+  ]
+}
