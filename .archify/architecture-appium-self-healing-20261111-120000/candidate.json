@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Appium Self-Healing Engine — Architecture",
+    "locale": "pt-BR",
+    "output": "appium-self-healing-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "git@github.com:Jasr4075/appium-self-healing-mobile.git",
+      "revision": "f804b6814520806567694ecd2bd03780dbab7f38",
+      "link_mode": "local-only"
+    }
+  },
+  "components": [
+    { "id": "test-runner", "type": "external", "label": "Test Runner", "sublabel": "WDIO spec / driver", "pos": [40, 180], "size": [130, 60], "sources": [{ "path": "src/index.js", "line": 19, "end_line": 27 }] },
+    { "id": "healing-engine", "type": "backend", "label": "HealingEngine", "sublabel": "orchestrator", "pos": [260, 180], "size": [140, 64], "tag": "singleton", "sources": [{ "path": "src/healing-engine.js", "line": 13, "end_line": 205 }] },
+    { "id": "selector-history", "type": "backend", "label": "SelectorHistory", "sublabel": "memory + JSON", "pos": [500, 60], "size": [140, 60], "sources": [{ "path": "src/selector-history.js", "line": 1, "end_line": 60 }] },
+    { "id": "selector-analyzer", "type": "backend", "label": "SelectorAnalyzer", "sublabel": "page source parser", "pos": [500, 180], "size": [140, 60], "sources": [{ "path": "src/selector-analyzer.js", "line": 23, "end_line": 83 }] },
+    { "id": "similarity-score", "type": "backend", "label": "SimilarityScore", "sublabel": "heuristic weights", "pos": [500, 300], "size": [140, 60], "sources": [{ "path": "src/similarity-score.js", "line": 8, "end_line": 127 }] },
+    { "id": "healing-logger", "type": "backend", "label": "HealingLogger", "sublabel": "audit logs", "pos": [260, 320], "size": [140, 60], "sources": [{ "path": "src/healing-logger.js", "line": 1, "end_line": 60 }] },
+    { "id": "appium-driver", "type": "external", "label": "Appium Driver", "sublabel": "getPageSource / $", "pos": [740, 180], "size": [130, 60], "sources": [{ "path": "src/selector-analyzer.js", "line": 27, "end_line": 48 }] },
+    { "id": "history-file", "type": "database", "label": "selector-history.json", "sublabel": "persistent cache", "pos": [740, 60], "size": [140, 60], "sources": [{ "path": "src/selector-history.js", "line": 1, "end_line": 40 }] },
+    { "id": "env-config", "type": "cloud", "label": "Environment", "sublabel": "HEALING_* weights", "pos": [260, 60], "size": [140, 60], "sources": [{ "path": "src/similarity-score.js", "line": 14, "end_line": 38 }] }
+  ],
+  "connections": [
+    { "id": "init", "from": "test-runner", "to": "healing-engine", "label": "initialize()", "variant": "emphasis" },
+    { "id": "find", "from": "test-runner", "to": "healing-engine", "label": "healingFind(selector)" },
+    { "id": "hist-lookup", "from": "healing-engine", "to": "selector-history", "label": "find()" },
+    { "id": "screen", "from": "healing-engine", "to": "selector-analyzer", "label": "getScreenElements()" },
+    { "id": "parse", "from": "selector-analyzer", "to": "appium-driver", "label": "getPageSource()" },
+    { "id": "score", "from": "healing-engine", "to": "similarity-score", "label": "calculate()" },
+    { "id": "create", "from": "healing-engine", "to": "selector-analyzer", "label": "createSelector() / isValidSelector()" },
+    { "id": "persist", "from": "healing-engine", "to": "selector-history", "label": "add()" },
+    { "id": "history-io", "from": "selector-history", "to": "history-file", "label": "read/write JSON" },
+    { "id": "log", "from": "healing-engine", "to": "healing-logger", "label": "logSuccess/logFailure" },
+    { "id": "env", "from": "env-config", "to": "similarity-score", "label": "weights/threshold", "variant": "dashed" },
+    { "id": "return", "from": "healing-engine", "to": "test-runner", "label": "element", "variant": "dashed" }
+  ]
+}

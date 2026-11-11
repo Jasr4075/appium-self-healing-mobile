@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "6018104c-9bd4-461d-984f-41d3caefbaed",
+  "status": "current",
+  "command": "deliver",
+  "type": "tree",
+  "input": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\tree-experiment-20261111-120000\\candidate.json",
+  "output": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\tree-experiment-20261111-120000\\experiment-structure.html",
+  "specification": {
+    "sha256": "65056c50c490362342ff1140e927561386f4491bedddd20cfab622048cdb26ad",
+    "bytes": 2265
+  },
+  "artifact": {
+    "sha256": "2493f79a70f7f16bbccda19d05072626d6bf90392de06adb65d3751c1bdbafd3",
+    "bytes": 837450
+  }
+}

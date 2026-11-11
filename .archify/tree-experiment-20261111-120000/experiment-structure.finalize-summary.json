@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "tree",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\tree-experiment-20261111-120000\\candidate.json",
+    "sha256": "65056c50c490362342ff1140e927561386f4491bedddd20cfab622048cdb26ad",
+    "bytes": 2265
+  },
+  "artifact": {
+    "path": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\tree-experiment-20261111-120000\\experiment-structure.html",
+    "sha256": "2493f79a70f7f16bbccda19d05072626d6bf90392de06adb65d3751c1bdbafd3",
+    "bytes": 837450
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\tree-experiment-20261111-120000\\experiment-structure.finalize.json",
+    "summaryReceipt": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\tree-experiment-20261111-120000\\experiment-structure.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\tree-experiment-20261111-120000\\experiment-structure.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-11T12:14:51.567Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 6885,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

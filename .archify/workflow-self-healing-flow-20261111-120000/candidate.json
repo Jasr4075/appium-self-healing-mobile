@@ -1,0 +1,228 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Self-Healing Flow",
+    "locale": "en",
+    "output": "self-healing-flow.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "git@github.com:Jasr4075/appium-self-healing-mobile.git",
+      "revision": "f804b6814520806567694ecd2bd03780dbab7f38",
+      "link_mode": "local-only"
+    }
+  },
+  "lanes": [
+    {
+      "id": "test",
+      "label": "Test"
+    },
+    {
+      "id": "engine",
+      "label": "Healing Engine"
+    },
+    {
+      "id": "history",
+      "label": "History"
+    },
+    {
+      "id": "analyzer",
+      "label": "Analyzer"
+    },
+    {
+      "id": "score",
+      "label": "Scoring"
+    }
+  ],
+  "mainPath": [
+    "t1",
+    "e1",
+    "e2"
+  ],
+  "nodes": [
+    {
+      "id": "t1",
+      "lane": "test",
+      "col": 0,
+      "type": "external",
+      "label": "healingFind(selector)",
+      "sources": [
+        {
+          "path": "src/healing-engine.js",
+          "line": 48,
+          "end_line": 88
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "lane": "engine",
+      "col": 1,
+      "type": "backend",
+      "label": "driver.$(selector)"
+    },
+    {
+      "id": "e2",
+      "lane": "engine",
+      "col": 2,
+      "type": "backend",
+      "label": "exists?"
+    },
+    {
+      "id": "ok",
+      "lane": "test",
+      "col": 3,
+      "type": "backend",
+      "label": "return element"
+    },
+    {
+      "id": "h1",
+      "lane": "history",
+      "col": 3,
+      "type": "backend",
+      "label": "history.find()"
+    },
+    {
+      "id": "hvalid",
+      "lane": "history",
+      "col": 4,
+      "type": "backend",
+      "label": "isValidSelector?"
+    },
+    {
+      "id": "hret",
+      "lane": "test",
+      "col": 5,
+      "type": "backend",
+      "label": "return historical"
+    },
+    {
+      "id": "a1",
+      "lane": "analyzer",
+      "col": 4,
+      "type": "backend",
+      "label": "getScreenElements()"
+    },
+    {
+      "id": "s1",
+      "lane": "score",
+      "col": 5,
+      "type": "backend",
+      "label": "calculate() x N"
+    },
+    {
+      "id": "s2",
+      "lane": "score",
+      "col": 0,
+      "type": "backend",
+      "label": "filterValidCandidates()"
+    },
+    {
+      "id": "a2",
+      "lane": "analyzer",
+      "col": 1,
+      "type": "backend",
+      "label": "createSelector()"
+    },
+    {
+      "id": "a3",
+      "lane": "analyzer",
+      "col": 2,
+      "type": "backend",
+      "label": "isValidSelector?"
+    },
+    {
+      "id": "h2",
+      "lane": "history",
+      "col": 0,
+      "type": "backend",
+      "label": "history.add()"
+    },
+    {
+      "id": "e3",
+      "lane": "engine",
+      "col": 3,
+      "type": "backend",
+      "label": "return healed element"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-t1-e1",
+      "from": "t1",
+      "to": "e1"
+    },
+    {
+      "id": "e-e1-e2",
+      "from": "e1",
+      "to": "e2"
+    },
+    {
+      "id": "e-e2-ok",
+      "from": "e2",
+      "to": "ok",
+      "label": "exists",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-e2-h1",
+      "from": "e2",
+      "to": "h1",
+      "label": "not found",
+      "variant": "security"
+    },
+    {
+      "id": "e-h1-hvalid",
+      "from": "h1",
+      "to": "hvalid"
+    },
+    {
+      "id": "e-hvalid-hret",
+      "from": "hvalid",
+      "to": "hret",
+      "label": "valid",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-hvalid-a1",
+      "from": "hvalid",
+      "to": "a1",
+      "label": "invalid/none",
+      "variant": "security"
+    },
+    {
+      "id": "e-a1-s1",
+      "from": "a1",
+      "to": "s1"
+    },
+    {
+      "id": "e-s1-s2",
+      "from": "s1",
+      "to": "s2",
+      "variant": "dashed"
+    },
+    {
+      "id": "e-s2-a2",
+      "from": "s2",
+      "to": "a2",
+      "variant": "dashed"
+    },
+    {
+      "id": "e-a2-a3",
+      "from": "a2",
+      "to": "a3"
+    },
+    {
+      "id": "e-a3-h2",
+      "from": "a3",
+      "to": "h2",
+      "label": "valid",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-h2-e3",
+      "from": "h2",
+      "to": "e3"
+    }
+  ]
+}

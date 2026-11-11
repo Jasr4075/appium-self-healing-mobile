@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "93184f62-1f5a-44b9-b996-2c934d52ffd4",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\architecture-appium-self-healing-20261111-120000\\candidate.json",
+  "output": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\architecture-appium-self-healing-20261111-120000\\appium-self-healing-architecture.html",
+  "specification": {
+    "sha256": "ca675f8a978d072a17a538894611a1d50c4d64bf2567f9e37fde06830efdb697",
+    "bytes": 3827
+  },
+  "artifact": {
+    "sha256": "ad46b29bb9978f65ae73571966dc53141da788a23a8ff1aa0d691cabfa657662",
+    "bytes": 849808
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\workflow-self-healing-flow-20261111-120000\\candidate.json",
+    "sha256": "613c378e2cf54835e9a3b96e767eb94a7e96247b7006087faeb8f3567caea0a4",
+    "bytes": 4305
+  },
+  "artifact": {
+    "path": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\workflow-self-healing-flow-20261111-120000\\self-healing-flow.html",
+    "sha256": "f0db8b4d7a1609bd07c24e93adea3369efefcb24ecebd96ff3a6deea4f73cc2f",
+    "bytes": 843419
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\workflow-self-healing-flow-20261111-120000\\self-healing-flow.finalize.json",
+    "summaryReceipt": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\workflow-self-healing-flow-20261111-120000\\self-healing-flow.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\workflow-self-healing-flow-20261111-120000\\self-healing-flow.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-11T12:14:51.567Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 11516,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

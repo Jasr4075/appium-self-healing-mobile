@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\architecture-appium-self-healing-20261111-120000\\candidate.json",
+    "sha256": "ca675f8a978d072a17a538894611a1d50c4d64bf2567f9e37fde06830efdb697",
+    "bytes": 3827
+  },
+  "artifact": {
+    "path": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\architecture-appium-self-healing-20261111-120000\\appium-self-healing-architecture.html",
+    "sha256": "ad46b29bb9978f65ae73571966dc53141da788a23a8ff1aa0d691cabfa657662",
+    "bytes": 849808
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [
+    {
+      "code": "i18n/locale-fallback",
+      "severity": "warning",
+      "message": "meta.locale \"pt-BR\" has no bundled catalog and no usable meta.translations; the Viewer chrome and <html lang> fall back to English.",
+      "subject": {
+        "diagramType": "architecture",
+        "path": "/meta/locale"
+      },
+      "evidence": {
+        "locale": "pt-BR",
+        "bundledLocales": [
+          "en",
+          "zh-CN",
+          "zh-TW",
+          "es",
+          "ko",
+          "ar"
+        ]
+      },
+      "supportedFixes": [
+        "Supply meta.translations for this locale.",
+        "Use a bundled locale: en, zh-CN, zh-TW, es, ko, ar."
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\architecture-appium-self-healing-20261111-120000\\appium-self-healing-architecture.finalize.json",
+    "summaryReceipt": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\architecture-appium-self-healing-20261111-120000\\appium-self-healing-architecture.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\adm90\\Documents\\ProjetosJuan\\appium-self-healing-mobile\\.archify\\architecture-appium-self-healing-20261111-120000\\appium-self-healing-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-11T12:14:51.567Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 6982,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  },
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "resolvedCrossovers": 9,
+      "routesOverSuggestedBends": 2
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [
+        {
+          "left": {
+            "id": "hist-lookup",
+            "from": "healing-engine",
+            "to": "selector-history",
+            "label": "find()",
+            "collectionIndex": 2,
+            "artifactIndex": 3
+          },
+          "right": {
+            "id": "create",
+            "from": "healing-engine",
+            "to": "selector-analyzer",
+            "label": "createSelector() / isValidSelector()",
+            "collectionIndex": 6,
+            "artifactIndex": 7
+          },
+          "point": [
+            344.15384615384613,
+            156
+          ],
+          "sharedNode": "healing-engine"
+        },
+        {
+          "left": {
+            "id": "hist-lookup",
+            "from": "healing-engine",
+            "to": "selector-history",
+            "label": "find()",
+            "collectionIndex": 2,
+            "artifactIndex": 3
+          },
+          "right": {
+            "id": "persist",
+            "from": "healing-engine",
+            "to": "selector-history",
+            "label": "add()",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "point": [
+            457.5999999999999,
+            150
+          ],
+          "sharedNode": "healing-engine"
+        },
+        {
+          "left": {
+            "id": "hist-lookup",
+            "from": "healing-engine",
+            "to": "selector-history",
+            "label": "find()",
+            "collectionIndex": 2,
+            "artifactIndex": 3
+          },
+          "right": {
+            "id": "env",
+            "from": "env-config",
+            "to": "similarity-score",
+            "label": "weights/threshold",
+            "collectionIndex": 10,
+            "artifactIndex": 11
+          },
+          "point": [
+            450,
+            150
+          ]
+        },
+        {
+          "left": {
+            "id": "screen",
+            "from": "healing-engine",
+            "to": "selector-analyzer",
+            "label": "getScreenElements()",
+            "collectionIndex": 3,
+            "artifactIndex": 4
+          },
+          "right": {
+            "id": "score",
+            "from": "healing-engine",
+            "to": "similarity-score",
+            "label": "calculate()",
+            "collectionIndex": 5,
+            "artifactIndex": 6
+          },
+          "point": [
+            465.6,
+            268
+          ],
+          "sharedNode": "healing-engine"
+        },
+        {
+          "left": {
+            "id": "screen",
+            "from": "healing-engine",
+            "to": "selector-analyzer",
+            "label": "getScreenElements()",
+            "collectionIndex": 3,
+            "artifactIndex": 4
+          },
+          "right": {
+            "id": "env",
+            "from": "env-config",
+            "to": "similarity-score",
+            "label": "weights/threshold",
+            "collectionIndex": 10,
+            "artifactIndex": 11
+          },
+          "point": [
+            450,
+            268
+          ]
+        },
+        {
+          "left": {
+            "id": "score",
+            "from": "healing-engine",
+            "to": "similarity-score",
+            "label": "calculate()",
+            "collectionIndex": 5,
+            "artifactIndex": 6
+          },
+          "right": {
+            "id": "env",
+            "from": "env-config",
+            "to": "similarity-score",
+            "label": "weights/threshold",
+            "collectionIndex": 10,
+            "artifactIndex": 11
+          },
+          "point": [
+            449.99999999999994,
+            227.99999999999991
+          ],
+          "sharedNode": "similarity-score"
+        },
+        {
+          "left": {
+            "id": "create",
+            "from": "healing-engine",
+            "to": "selector-analyzer",
+            "label": "createSelector() / isValidSelector()",
+            "collectionIndex": 6,
+            "artifactIndex": 7
+          },
+          "right": {
+            "id": "persist",
+            "from": "healing-engine",
+            "to": "selector-history",
+            "label": "add()",
+            "collectionIndex": 7,
+            "artifactIndex": 8
+          },
+          "point": [
+            457.5999999999999,
+            156
+          ],
+          "sharedNode": "healing-engine"
+        },
+        {
+          "left": {
+            "id": "create",
+            "from": "healing-engine",
+            "to": "selector-analyzer",
+            "label": "createSelector() / isValidSelector()",
+            "collectionIndex": 6,
+            "artifactIndex": 7
+          },
+          "right": {
+            "id": "env",
+            "from": "env-config",
+            "to": "similarity-score",
+            "label": "weights/threshold",
+            "collectionIndex": 10,
+            "artifactIndex": 11
+          },
+          "point": [
+            450,
+            156
+          ]
+        }
+      ],
+      "detours": [
+        {
+          "relationship": {
+            "id": "find",
+            "from": "test-runner",
+            "to": "healing-engine",
+            "label": "healingFind(selector)",
+            "collectionIndex": 1,
+            "artifactIndex": 2
+          },
+          "bends": 4,
+          "stretch": 1.348
+        },
+        {
+          "relationship": {
+            "id": "create",
+            "from": "healing-engine",
+            "to": "selector-analyzer",
+            "label": "createSelector() / isValidSelector()",
+            "collectionIndex": 6,
+            "artifactIndex": 7
+          },
+          "bends": 3,
+          "stretch": 1.249
+        }
+      ],
+      "truncated": true
+    },
+    "hints": [
+      "healing-engine has 5 relationships facing its right side, which fits 3 ports: make that side at least 88px, or move some of those neighbours so they face another side of healing-engine.",
+      "healing-engine → selector-history and healing-engine → selector-analyzer cross next to healing-engine: move node selector-history or selector-analyzer so the two reach healing-engine from different sides (for example one level with it, one directly above or below it).",
+      "healing-engine → selector-history and healing-engine → selector-history cross next to healing-engine: move node selector-history or selector-history so the two reach healing-engine from different sides (for example one level with it, one directly above or below it).",
+      "healing-engine → selector-history crosses env-config → similarity-score: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "healing-engine → selector-analyzer and healing-engine → similarity-score cross next to healing-engine: move node selector-analyzer or similarity-score so the two reach healing-engine from different sides (for example one level with it, one directly above or below it).",
+      "healing-engine → selector-analyzer crosses env-config → similarity-score: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "healing-engine → similarity-score and env-config → similarity-score cross next to similarity-score: move node healing-engine or env-config so the two reach similarity-score from different sides (for example one level with it, one directly above or below it).",
+      "healing-engine → selector-analyzer and healing-engine → selector-history cross next to healing-engine: move node selector-analyzer or selector-history so the two reach healing-engine from different sides (for example one level with it, one directly above or below it)."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}

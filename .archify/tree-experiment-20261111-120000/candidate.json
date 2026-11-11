@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "diagram_type": "tree",
+  "meta": {
+    "title": "Experiment Harness \u00e2\u20ac\u201d Structure",
+    "locale": "en",
+    "output": "experiment-structure.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "git@github.com:Jasr4075/appium-self-healing-mobile.git",
+      "revision": "f804b6814520806567694ecd2bd03780dbab7f38",
+      "link_mode": "local-only"
+    }
+  },
+  "layout": {
+    "direction": "right"
+  },
+  "nodes": [
+    {
+      "id": "experiment",
+      "label": "experiment/",
+      "sublabel": "38 runs",
+      "sources": [
+        {
+          "path": "experiment/lib/matriz.js",
+          "line": 1,
+          "end_line": 20
+        }
+      ]
+    },
+    {
+      "id": "lib",
+      "parent": "experiment",
+      "label": "lib/",
+      "sublabel": "harness code"
+    },
+    {
+      "id": "dispositivo",
+      "parent": "lib",
+      "label": "dispositivo.js",
+      "sublabel": "device control",
+      "sources": [
+        {
+          "path": "experiment/lib/dispositivo.js",
+          "line": 1,
+          "end_line": 20
+        }
+      ]
+    },
+    {
+      "id": "matriz",
+      "parent": "lib",
+      "label": "matriz.js",
+      "sublabel": "run matrix",
+      "sources": [
+        {
+          "path": "experiment/lib/matriz.js",
+          "line": 1,
+          "end_line": 20
+        }
+      ]
+    },
+    {
+      "id": "dados",
+      "parent": "experiment",
+      "label": "dados/",
+      "sublabel": "inputs + outputs"
+    },
+    {
+      "id": "logs",
+      "parent": "dados",
+      "label": "logs/",
+      "sublabel": "38 run reports"
+    },
+    {
+      "id": "resultados",
+      "parent": "dados",
+      "label": "resultados.json",
+      "sublabel": "aggregated metrics",
+      "sources": [
+        {
+          "path": "experiment/dados/resultados.json",
+          "line": 1,
+          "end_line": 5
+        }
+      ]
+    },
+    {
+      "id": "tabelas",
+      "parent": "dados",
+      "label": "tabelas.md",
+      "sublabel": "summary tables",
+      "sources": [
+        {
+          "path": "experiment/dados/tabelas.md",
+          "line": 1,
+          "end_line": 5
+        }
+      ]
+    }
+  ]
+}
